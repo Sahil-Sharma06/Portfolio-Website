@@ -6,12 +6,22 @@
   box-sizing: border-box;
 }
 
-h1{
-  font-weight: 2000;
+h1 {
+  font-weight: 200;
 }
 
-h2{
-  font-weight: 1200;
+h2 {
+  font-weight: 200;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.main {
+  height: 100%;
+  width: 100%;
 }
 
 body {
@@ -19,33 +29,51 @@ body {
   color: #dddddd;
   font-family: 'Montserrat', sans-serif;
   scroll-behavior: smooth;
+  width: 100vw;
+
 }
 
-li,
-a {
-  font-size: 15px;
+li, a {
+  font-size: 0.8vw; /* Adjust font size for better responsiveness */
   color: white;
   text-decoration: none;
   list-style: none;
 }
 
-header {
+.navLinks li a h2{
+  font-size: 0.8vw;
+}
+.navLinks ul i{
+  cursor: pointer;
+}
+
+.nav {
+  height: 100px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 10%;
+  padding: 0 3vw;
 }
 
-.logo {
+#logo {
   cursor: pointer;
-  font-size: 20px;
+  font-size: 1.2vw;
   font-weight: bold;
   color: white;
 }
 
+.nav h1 {
+  font-size: 1.5vw;
+}
+
+.nav i{
+  display: none;
+}
+
 .navLinks li {
   display: inline-block;
-  padding: 0px 20px;
+  padding: 0 2vw; /* Adjust horizontal padding */
 }
 
 .navLinks li a {
@@ -54,20 +82,13 @@ header {
 }
 
 .resume {
-  height: 40px;
-  width: 90px;
-  font-size: 15px;
+  height: 2.5vw;
+  width: 5vw;
+  font-size: 1.2vw; /* Adjust font size */
   color: rgb(255, 255, 255);
   background-color: #0b090a;
-  border: 1px solid white;
   border-radius: 5px;
   cursor: pointer;
-}
-
-.resume:hover{
-  background-color: rgb(220, 220, 220);
-  color: black;
-  transition: all 0.3s ease 0s;
 }
 
 .navLinks li a::after {
@@ -86,9 +107,91 @@ header {
   width: 100%;
 }
 
+@media (max-width: 600px) {
+  .nav { 
+    padding: 5px; /* Adjust padding for smaller screens */
+    width: 100%;
+  }
+
+  .nav i{
+    display: flex;
+    align-items: center;
+    padding: 0 3vw;
+  }
+
+  #logo {
+    font-size: 3vw; /* Adjust logo size for smaller screens */
+    padding: 0 3vw;
+  }
+
+  .navPart2 {
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    background-color: #0b090a;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    transform: translateY(-100%);
+  }
+
+  .navPart2.show-menu {
+    display: block;
+    transform: translateY(0);
+  }
+
+  .navLinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .navLinks li {
+    margin-bottom: 10px;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .navLinks{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navPart2{
+    margin-left: 10px;
+    display: none;
+  }
+
+  .nav h1 {
+    font-size: 4vw; /* Adjust heading size for smaller screens */
+  }
+
+  .navLinks li {
+   /* Change list items to display as block elements */
+    padding: 10px 0; /* Adjust vertical padding */
+  }
+
+  .navLinks li a h2 {
+    margin-left: 15px;
+    font-size: 4vw; /* Adjust font size for smaller screens */
+  }
+
+  .resume {
+    height: auto; /* Adjust height to fit content */
+    width: auto; /* Adjust width to fit content */
+    font-size: 1.2vw; /* Adjust font size */
+  }
+}
+
+
 
 .homePage {
-  height: 100vh;
+  height: 80vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -176,9 +279,28 @@ header {
   text-align: left;
 }
 
-.aboutPage{
-    height: 100vh;
+@media (max-width: 600px){
+  .homePage{
     width: 100%;
+    height: 65vh;
+  }
+  .name h2{
+    font-size: 8vw;
+  }
+  .socialMedia{
+   display: none;
+  }
+  #my-Name{
+    color: rgb(217, 0, 255);
+  }
+  
+}
+
+.aboutPage{
+    margin-top: 10vh;
+    height: 100vh;
+    padding: 20px;
+    /* width: 100%; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -194,6 +316,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .aboutMe .aboutMeImage img{
@@ -207,8 +330,8 @@ header {
 }
 
 .aboutMeContent{
-    height: 600px;
-    width: 900px;
+    height: 50vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -217,8 +340,44 @@ header {
 
 .aboutMe .aboutMeContent p{
     text-align: justify;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 800;
+}
+
+@media (max-width: 600px) {
+  .aboutPage{
+    width: 100%;
+  }
+
+  .aboutHeading h1{
+    font-size: 10vw;
+  }
+
+  .aboutMeImage{
+    display: flex;
+    align-items: center;
+    margin-left: 10vw;
+  }
+
+  #about-me-img{
+    height: 300px;
+    width: 300px;
+  }
+
+  .aboutMe{
+    flex-direction: column;
+  }
+
+  .aboutMeContent{
+    width: 80vw;
+  }
+
+  .aboutMe .aboutMeContent p{
+    font-size: 11px;
+    font-weight: 300;
+  }
+
+
 }
 
 .skillsContainer {
@@ -235,7 +394,7 @@ header {
 }
 
 .skillHeading {
-  font-size: 56px;
+  font-size: 50px;
   padding: 20px;
 }
 
@@ -244,14 +403,8 @@ header {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  height: 500px;
-  width: 95vw;
-}
-
-.skillCard {
-  padding: 20px;
-  height: 220px;
-  width: 220px;
+  height: 50vh;
+  width: 100vw;
 }
 
 .skillCard {
@@ -364,6 +517,44 @@ header {
   margin: 10px;
   border-radius: 5px;
 }
+
+@media (max-width: 600px) {
+  .skillsContainer {
+    width: 100%;
+    margin-top: 20px; 
+  }
+
+  .skills {
+    height: auto; /* Remove fixed height */
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px; /* Add padding to create space between cards */
+  }
+
+  .skillCard {
+    height: 110px; 
+    width: 45%; 
+    margin: 10px 2.5%;
+    gap: 1vh; 
+  }
+
+  .skillCard h2 {
+    font-size: 1rem; 
+  }
+
+  .skillImage {
+    height: 40px; 
+    width: 40px; 
+  }
+
+  .skillsHeading h1 {
+    font-size: 45px;
+  }
+}
+
 
 .recentWorkContainer {
   height: 150vh;
@@ -483,11 +674,67 @@ header {
   object-fit: cover;
 }
 
-/* .project:hover {
+@media (max-width: 600px) {
+  .recentWorkContainer{
+    width: 100%;
+    height: 370vh;
+    margin-top: 35vh; 
+  }
+  .projects {
+    width: 100%;
+    padding: 0 10px; /* Add padding for spacing */
+  }
+
+  .recentHeading{
+    font-size: 40px;
+  }
+
+  .project {
+    width: 90%;
+    height: 60vh;
+    margin-top: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    gap: 2.5vh;
+    transition: all ease 0.5s;
+    padding-bottom: 15px;
+  }
+
+  .project img{
+    width: 100%;
+  }
+
+  .project .link {
+    height: 40px;
+    width: 95px;
+    font-size: 15px;
+  }
+
+  .project .link:hover {
     background-color: rgb(220, 220, 220);
-  color: black;
-  transition: all 0.3s ease 0s;
-} */
+    color: black;
+    transition: all 0.3s ease 0s;
+  }
+
+  .project p {
+    padding: 10px;
+    height: auto; /* Remove fixed height */
+    width: 100%; /* Adjust width to fill the container */
+  }
+
+  .projectHeading {
+    margin-top: 20px;
+  }
+
+  .projectContent {
+    margin-top: 30px;
+  }
+}
+
+
 
 #contact-loc{
   height: 100vh;
@@ -535,3 +782,46 @@ header {
   margin-top: 7.5vh;
   cursor: pointer;
 }
+
+
+@media (max-width: 600px) {
+
+  #contact-loc{
+    margin-top: 40vh;
+  }
+  .contact-me {
+    padding: 50px; 
+  }
+
+  .contact-me h1 {
+    font-size: 36px; 
+  }
+
+  .contact {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; 
+  }
+
+  .contact-card {
+    margin-top: 20px; 
+    padding: 15px; 
+  }
+
+}
+
+.footer{
+  display: none;
+}
+
+@media (max-width: 600px) {
+
+  .footer{
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+}
+
+/* Making the website responsive  */
+

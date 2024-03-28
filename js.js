@@ -1,4 +1,18 @@
 
+document.addEventListener('DOMContentLoaded', function() {
+    const menuIcon = document.getElementById('menu-icon');
+    const navPart2 = document.querySelector('.navPart2');
+    const logo = document.getElementById('logo');
+  
+    menuIcon.addEventListener('click', function() {
+      navPart2.classList.toggle('show-menu');
+      menuIcon.classList.toggle('hide-menu');
+      logo.classList.toggle('hide');
+    });
+  });
+  
+  
+
 var tl = gsap.timeline()
 
 tl.from("header",{
