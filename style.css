@@ -251,6 +251,7 @@ li, a {
 .socialIcon a {
   color: black;
   font-size: 15px;
+  cursor: pointer;
 }
 
 .socialMedia .socialIcon .twitter {
