@@ -348,6 +348,7 @@ li, a {
 @media (max-width: 600px) {
   .aboutPage{
     width: 100%;
+    height: auto;
   }
 
   .aboutHeading h1{
@@ -371,6 +372,7 @@ li, a {
 
   .aboutMeContent{
     width: 80vw;
+    height: 50vh;
   }
 
   .aboutMe .aboutMeContent p{
