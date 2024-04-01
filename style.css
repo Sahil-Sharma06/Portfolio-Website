@@ -692,7 +692,7 @@ li, a {
 
   .project {
     width: 90%;
-    height: 60vh;
+    height: 65vh;
     margin-top: 20px;
     border-radius: 20px;
     display: flex;
@@ -722,8 +722,8 @@ li, a {
 
   .project p {
     padding: 10px;
-    height: auto; /* Remove fixed height */
-    width: 100%; /* Adjust width to fill the container */
+    /* height: auto;  */
+    width: 100%; 
   }
 
   .projectHeading {
@@ -788,7 +788,7 @@ li, a {
 @media (max-width: 600px) {
 
   #contact-loc{
-    margin-top: 40vh;
+    margin-top: 60vh;
   }
   .contact-me {
     padding: 50px; 
