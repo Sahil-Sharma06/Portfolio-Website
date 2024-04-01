@@ -371,6 +371,7 @@ li, a {
   }
 
   .aboutMeContent{
+    margin-top: 10px;
     width: 80vw;
     height: 50vh;
   }
