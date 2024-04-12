@@ -268,7 +268,7 @@ li, a {
 }
 
 .socialMedia .socialIcon .dribble {
-  color: #ea4c89;
+  color: #000000;
 }
 
 .socialMedia .socialIcon .linkedIn {
@@ -525,6 +525,7 @@ li, a {
 @media (max-width: 600px) {
   .skillsContainer {
     width: 100%;
+    height: 170vh;
     margin-top: 20px; 
   }
 
@@ -613,6 +614,7 @@ li, a {
   top: 30%;
   left: 20%;
 }
+
 
 .project .link:hover{
   background-color: rgb(220, 220, 220);
@@ -715,6 +717,10 @@ li, a {
     height: 40px;
     width: 95px;
     font-size: 15px;
+  }
+
+  .link a{
+    font-size: 0.8rem;
   }
 
   .project .link:hover {
